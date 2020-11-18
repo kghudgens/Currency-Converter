@@ -12,8 +12,9 @@ root.title("EZ Currency Converter")
 root.geometry("350x200")
 
 #create currency option list
-currencies = ["USD","EUR","JPY", "GBP","AUD", "CAD", "CHF","HKD","SGD", "MXN", 
-"SEK", "PHP", "RUB", "HUF","LTL","MTL", "PLN", "ROL", "SIT", "SKK", 
+currencies = [
+    "USD","EUR","JPY", "GBP","AUD", "CAD", "CHF","HKD","SGD", "MXN", 
+    "SEK", "PHP", "RUB", "HUF","LTL","MTL", "PLN", "ROL", "SIT", "SKK", 
 ]
 
 def conversion(clicked, second_clicked, currency_amount):
@@ -35,7 +36,13 @@ welcome = Label(root, text="Welcome to your new favorite Currency Converter")
 original =OptionMenu(root, clicked, *currencies)
 converted =OptionMenu(root, second_clicked, *currencies)
 currency_amount= Entry(root, width=30)
-convert = Button(root, text="Convert", padx=10, pady=10, command=lambda:conversion(clicked.get(),second_clicked.get(), currency_amount.get()))
+convert = Button(
+    root, 
+    text="Convert", 
+    padx=10, 
+    pady=10, 
+    command=lambda:conversion(clicked.get(),second_clicked.get(), currency_amount.get())
+)
 
 
 #place widgets
